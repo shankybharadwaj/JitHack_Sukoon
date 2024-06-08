@@ -1,0 +1,243 @@
+/* Custom CSS for Navbar */
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    overflow-x: hidden;
+  }
+  
+  .navbar {
+    background-color: #32373c; /* Light gray background */
+  }
+  
+  .navbar-brand {
+    color: #343a40; /* Dark gray text */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: #343a40; /* Dark gray color for the toggler icon */
+  }
+  
+  .navbar-nav {
+    margin-right: 100px;
+    display: flex; /* Use flexbox */
+  }
+  
+  .navbar-nav .nav-link {
+    color: #343a40; /* Dark gray text */
+    margin-right: 10px; /* Add margin between nav links */
+  }
+  
+  .navbar-nav .nav-item.active .nav-link {
+    color: #e114bc; /* Blue color for active link */
+  }
+  
+  .dropdown-menu {
+    background-color: #ffffff; /* White background */
+  }
+  
+  .dropdown-menu .dropdown-item {
+    color: #131414; /* Dark gray text */
+  }
+  
+  .dropdown-menu .dropdown-item:hover {
+    background-color: #f8f9fa; /* Light gray background on hover */
+  }
+  
+
+  /* Custom CSS for Image and Description */
+  .container1 {
+    margin-bottom: 5px;
+  }
+  
+  .description h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+  }
+  
+  .description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    font-size: 22px;
+    margin-left: 150px;
+    margin-bottom: 0;
+  }
+  
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-left: 100px;
+  }
+  
+  .seemore {
+    padding: 8px 15px;
+    border: 2px solid #95AD96;
+    border-radius: 5px;
+    background-color: #a0c6c6;
+  }
+  
+  @media (max-width: 768px) {
+    .description {
+      margin-left: 5px;
+      text-align: justify;
+    }
+  
+    .description h2 {
+      text-align: center;
+    }
+  
+    .img-fluid {
+      margin-left: 0;
+    }
+  
+    .navbar-nav {
+      margin-right: 0;
+    }
+  
+    .seemore {
+      margin-left: 120px;
+    }
+  }
+
+  .heading_head{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 0;
+    font-size: 45px;
+  }
+  
+  .container2 {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+  .Information {
+    background-color: #a0c6c6;
+    padding: 20px;
+  }
+  
+  .main-text {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .box {
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    flex: 1 1 20%; /* Allow boxes to shrink and grow */
+    max-width: 25%; /* Ensure max width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .logo {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .box h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+  
+  .box p {
+    flex-grow: 1; /* Make the paragraph take available space */
+  }
+  
+  @media (max-width: 768px) {
+    .box {
+      max-width: 45%; /* Adjust width for tablets */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .box {
+      max-width: 100%; /* Adjust width for mobile devices */
+    }
+  }
+  
+
+  .container2 {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .card {
+    width: 18rem;
+    margin: 20px;
+    box-shadow: #343a40;
+    margin-top: 0;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .card-body {
+    text-align: center;
+  }
+
+  .card-text {
+    font-size: 25px;
+    font-weight: 20px;
+  }
+
+  .footer {
+    background-color: #32373c;
+    color: #ffffff;
+    padding: 20px 0;
+  }
+  
+  .footer h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ffffff;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+  
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer ul li a {
+    color: #ffffff;
+    text-decoration: none;
+  }
+  
+  .footer ul li a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #272b30;
+    font-size: 14px;
+    color: #ffffff;
+  }
+  

@@ -1,0 +1,74 @@
+import pandas as pd
+import joblib
+from sklearn.compose import ColumnTransformer
+from sklearn.preprocessing import LabelEncoder, OrdinalEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import AdaBoostClassifier
+
+# Load and preprocess the data
+data = pd.read_csv('survey_with_target.csv')
+data.drop(['Country', 'state', 'Timestamp', 'comments'], axis=1, inplace=True)
+
+# Fill missing values
+data['self_employed'] = data['self_employed'].fillna('No')
+data['work_interfere'] = data['work_interfere'].fillna('N/A')
+
+# Drop rows with ages outside the specified range
+data = data[(data['Age'] <= 60) & (data['Age'] >= 18)]
+
+# Simplify Gender categorization
+gender_replacements = {
+    'Male': ['Male', 'male', 'M', 'm', 'Cis Male', 'Man', 'cis male', 'Mail', 'Male-ish', 'Male (CIS)', 'Cis Man', 
+             'msle', 'Malr', 'Mal', 'maile', 'Make'],
+    'Female': ['Female', 'female', 'F', 'f', 'Woman', 'femail', 'Cis Female', 'cis-female/femme', 'Femake', 
+               'Female (cis)', 'woman'],
+    'Non-Binary': ['Female (trans)', 'queer/she/they', 'non-binary', 'fluid', 'queer', 'Androgyne', 'Trans-female', 
+                   'male learning androgynous', 'Agender', 'A little about you', 'Nah', 'All', 
+                   'ostensibly male, unsure what that really means', 'Genderqueer', 'Enby', 'p', 'Neuter', 
+                   'something kinda male?', 'Guy (-ish) ^_^', 'Trans woman']
+}
+
+for key, values in gender_replacements.items():
+    data['Gender'] = data['Gender'].replace(values, key)
+
+# Define stress level based on work_interfere
+stress_mapping = {
+    'N/A': 'no',
+    'Never': 'no',
+    'Rarely': 'mild',
+    'Sometimes': 'moderate',
+    'Often': 'severe'
+}
+data['stress_level'] = data['work_interfere'].map(stress_mapping)
+
+# Features and target
+X = data.drop(['treatment', 'stress_level'], axis=1)
+y = data['stress_level']
+
+# Column transformer
+categorical_features = ['Gender', 'self_employed', 'family_history', 'work_interfere', 'no_employees', 
+                        'remote_work', 'tech_company', 'benefits', 'care_options', 'wellness_program', 
+                        'seek_help', 'anonymity', 'leave', 'mental_health_consequence', 
+                        'phys_health_consequence', 'coworkers', 'supervisor', 'mental_health_interview', 
+                        'phys_health_interview', 'mental_vs_physical', 'obs_consequence']
+ct = ColumnTransformer([('oe', OrdinalEncoder(), categorical_features)], remainder='passthrough')
+
+X = ct.fit_transform(X)
+
+# Label encoder
+le = LabelEncoder()
+y = le.fit_transform(y)
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=99)
+
+# Train the model
+abc = AdaBoostClassifier(random_state=99)
+abc.fit(X_train, y_train)
+
+# Save the model and column transformer
+joblib.dump(abc, 'abc_model.pkl')
+joblib.dump(ct, 'feature_values.pkl')
+joblib.dump(le, 'label_encoder.pkl')
+
+print("Model and transformers saved.")

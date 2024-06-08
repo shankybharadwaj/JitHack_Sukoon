@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar</title>
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .chatbot-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #007bff;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .chatbot-button img {
+        width: 40px;
+        height: 40px;
+    }
+  </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SUKOON</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <a class="dropdown-item" href="#">Appointment</a>
+                <a class="dropdown-item" href="#">Features</a>
+                <a class="dropdown-item" href="#">Our Team</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Contact
+              </a>
+              <div class="dropdown-menu" aria-labelledby="contactDropdown">
+                <a class="dropdown-item" href="tel:+1234567890">8867123976</a>
+                <a class="dropdown-item" href="tel:+0987654321">9880407595</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+    </nav>
+      
+
+    <div class="wrapper">
+        <div class="card">
+            <img src="acoustic-guitar-snare-drum-black-background-isolated.jpg" alt="Guitar and Snare Drum">
+            <div class="info">
+                <h1>MUSIC</h1>
+                <p>Music therapy helps improve mental health by reducing stress, enhancing mood, and fostering emotional expression and relaxation.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="front-view-stacked-books-ladders-with-copy-space-education-day.jpg" alt="Stacked Books">
+            <div class="info">
+                <h1>BOOKS</h1>
+                <p>Books aid in therapy by offering escape, fostering empathy, reducing stress, and providing valuable insights and perspectives for personal growth.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+
+        <div class="card">
+          <img src="images/assortment-healthy-food-dishes-vertical-orientation-generative-ai_189959-2069.avif" alt="Stacked Books">
+          <div class="info">
+              <h1>FOOD</h1>
+              <p>Healthy food can boost mood, reduce anxiety, and improve mental clarity, providing natural mental therapy through nutrition and well-being.</p>
+              <a href="#" class="btn">read more</a>
+          </div>
+      </div>
+
+        <div class="card">
+            <img src="cinema-concept-with-various-elements.jpg" alt="Cinema Concept">
+            <div class="info">
+                <h1>MOVIES</h1>
+                <p>Movies assist in therapy by providing emotional release, enhancing empathy, offering distraction, and presenting diverse perspectives that aid personal reflection.</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="chatbot-button" id="chatbotButton">
+        <img src="chatbot-icon.png" alt="Chatbot">
+    </div>
+  
+    
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <h5>About Us</h5>
+            <p>Sukoon is dedicated to providing personalized therapy sessions through AI technology. Our mission is to make mental health care accessible and effective for everyone.</p>
+          </div>
+          <div class="col-md-4">
+            <h5>Contact Us</h5>
+            <ul>
+              <li>Email: info@sukoon.com</li>
+              <li>Phone: +123 456 7890</li>
+              <li>Address: 123 Sukoon Street, Wellness City</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+            <h5>Follow Us</h5>
+            <ul class="social-links">
+              <li><a href="#">Facebook</a></li>
+              <li><a href="#">Twitter</a></li>
+              <li><a href="#">Instagram</a></li>
+              <li><a href="#">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Sukoon. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+      document.getElementById('chatbotButton').onclick = function() {
+          window.location.href = 'http://localhost:8501/';  // Replace with your Streamlit app URL
+      }
+    </script>
+</body>
+</html>

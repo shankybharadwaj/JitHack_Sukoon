@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Navbar with Image and Description</title>
+  <link rel="stylesheet" href="./mainpage.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+  <style>
+    .chatbot-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background-color: #a0c6c6;
+        border-radius: 50%;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .chatbot-button img {
+        width: 40px;
+        height: 40px;
+    }
+  </style>
+  <div class="chatbot-button" id="chatbotButton">
+    <img src="chatbot-icon.png" alt="Chatbot">
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Sukoon</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Appointment</a>
+          <a class="dropdown-item" href="demo.html">Features</a>
+          <a class="dropdown-item" href="#">Our Team</a>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#info-section">About</a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Contact
+        </a>
+        <div class="dropdown-menu" aria-labelledby="contactDropdown">
+          <a class="dropdown-item" href="tel:+1234567890">8867123976</a>
+          <a class="dropdown-item" href="tel:+0987654321">9880407595</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container1">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="description">
+        <h2>Welcome to Sukoon!</h2>
+        <p>At Sukoon, we harness the power of AI to deliver personalized therapy sessions tailored to diverse age groups. Our innovative platform adapts to the unique emotional and psychological needs of each user, providing effective and empathetic support. Whether for yourself, a loved one, or a client, Sukoon ensures accessible, individualized care to optimize mental health outcomes. Experience the future of therapy with us, where every session is a step towards a healthier,happier you.</p>
+        <div>
+            <button class="seemore" onclick="location.href='#cards-section'">See more</button>
+
+        </div>
+      </div>
+
+    </div>
+    <div class="container2">
+      <img src="images/Vector.svg" alt="Description Image" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+
+<div class="Information" id="info-section">
+    <div class="main-text">
+        <h1 style="font-size: 45px;">Why Sukoon?</h1>
+        <p style="font-size: 30px;">This is a description or some introductory text.</p>
+    </div>
+    <div class="container">
+        <div class="box">
+            <img src="images/psychology.png" alt="Logo 1" class="logo">
+            <h3>Tailored therapy interventions</h3>
+            <p>Our AI-driven platform provides personalized therapy recommendations, including music, movies, books, and food tailored to the unique needs of different age groups.</p>
+        </div>
+        <div class="box">
+            <img src="images/medical.png" alt="Logo 2" class="logo">
+            <h3>Access to Healthcare Professionals</h3>
+            <p>Users can schedule appointments with qualified doctors through our platform for additional support and guidance.</p>
+        </div>
+        <div class="box">
+            <img src="images/chatbot.png" alt="Logo 3" class="logo">
+            <h3>Interactive Chatbot Support</h3>
+            <p>Our chatbot is available 24/7 to answer queries related to mental health and provide immediate support and guidance.</p>
+        </div>
+        <div class="box">
+            <img src="images/therapy.png" alt="Logo 4" class="logo">
+            <h3>Holistic Mental Health Approach</h3>
+            <p>From therapy interventions to professional support, our platform offers a holistic approach to mental well-being for diverse age groups.</p>
+        </div>
+    </div>
+</div>
+
+<div class="heading_head">
+  <h2>Choose your category!</h2>
+</div>
+<div class="container2 mt-5" id="cards-section">
+ 
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <a href="templates/index.html">
+            <img src="images/students.jpg" alt="Card Image 1" class="card-img-top">
+          </a>
+          <div class="card-body">
+            <p class="card-text text-center">Students</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <a href="templates/simple.html">
+            <img src="images/employers.jpg" alt="Card Image 2" class="card-img-top">
+          </a>
+          <div class="card-body">
+            <p class="card-text text-center">Employers</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>About Us</h5>
+          <p>Sukoon is dedicated to providing personalized therapy sessions through AI technology. Our mission is to make mental health care accessible and effective for everyone.</p>
+        </div>
+        <div class="col-md-4">
+          <h5>Contact Us</h5>
+          <ul>
+            <li>Email: info@sukoon.com</li>
+            <li>Phone: +123 456 7890</li>
+            <li>Address: 123 Sukoon Street, Wellness City</li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>Follow Us</h5>
+          <ul class="social-links">
+            <li><a href="#">Facebook</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Sukoon. All rights reserved.</p>
+    </div>
+  </footer>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.getElementById('chatbotButton').onclick = function() {
+      window.location.href = 'http://localhost:8501/';  // Replace with your Streamlit app URL
+  }
+</script>
+</body>
+</html>
