@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profiles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            width: 300px;
+            height: 400px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 15px; /* Increased border radius for softer look */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Improved hover effect */
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0; /* Rounded corners for the top of the image */
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h2 {
+            margin-top: 0;
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin-top: 0;
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .connect-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .connect-btn:hover {
+            background-color: #45a049;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .card {
+                width: calc(50% - 20px);
+                margin-right: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .card {
+                width: calc(100% - 20px);
+                margin-right: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <img src="ba4269581c18c4e7acfa0e85b2884d6f.jpg" alt="Dr. John Smith">
+            <div class="card-content">
+                <h2>Dr. John Smith</h2>
+                <p>Education: MD, Psychiatry<br>Specialization: Anxiety and Depression</p>
+                <button onclick="get_data()">Connect</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="d3f913b8dd27fac04b26c2c9a903610d.png" alt="Dr. Emily Brown">
+            <div class="card-content">
+                <h2>Dr. Emily Brown</h2>
+                <p>Education: PhD, Clinical Psychology<br>Specialization: Trauma and PTSD</p>
+                <button class="connect-btn">Connect</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="ba4269581c18c4e7acfa0e85b2884d6f.jpg" alt="Dr. Michael Johnson">
+            <div class="card-content">
+                <h2>Dr. Michael Johnson</h2>
+                <p>Education: MD, Psychiatry<br>Specialization: Bipolar Disorder</p>
+                <button class="connect-btn">Connect</button>
+            </div>
+        </div>
+        <div class="card">
+            <img src="d3f913b8dd27fac04b26c2c9a903610d.png" alt="Dr. Sarah Davis">
+            <div class="card-content">
+                <h2>Dr. Sarah Davis</h2>
+                <p>Education: MD, Psychiatry<br>Specialization: Addiction Counseling</p>
+                <button class="connect-btn">Connect</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function get_data() {
+            Window.location.href = '/datehtml';
+        }
+             
+    </script>
+</body>
+</html>

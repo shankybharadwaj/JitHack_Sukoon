@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointment Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("background.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            
+        }
+
+        .container {
+            padding: 20px;
+            max-width: 400px;
+            margin: 0 auto;
+            margin-top: 300px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .appointments {
+            display: none;
+        }
+
+        .appointments button {
+            margin: 5px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .appointments button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #submitBtn {
+            display: none;
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form id="appointmentForm" action="/appointment" method="post">
+        <div class="container">
+            <div class="form-group">
+                <label for="date">Select Date</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <div class="appointments" id="appointments">
+                <h3>Available Appointment Times</h3>
+                <button id="time1" type="button" value="9am" onclick="selectTime('9')">9:00 am - 10:00 am</button>
+                <button id="time2" type="button" value="12pm" onclick="selectTime('12')">12:00 pm - 1:00 pm</button>
+                <button id="time3" type="button" value="14pm" onclick="selectTime('14')">2:00 pm - 3:00 pm</button>
+                <button id="time4" type="button" value="19pm" onclick="selectTime('19')">7:00 pm - 8:00 pm</button>
+            </div>
+            <input type="hidden" name="time" id="selectedTime">
+            <input type="submit" value="Submit" id="submitBtn">
+        </div>
+    </form>
+
+    <script>
+        document.getElementById('date').addEventListener('change', function() {
+            const selectedDate = new Date(document.getElementById('date').value);
+            const currentDate = new Date();
+            
+            // Reset the time slots display and selection
+            document.getElementById('submitBtn').style.display = 'none';
+            document.getElementById('appointments').style.display = 'none';
+            document.getElementById('selectedTime').value = '';
+
+            // Check if the selected date is today or in the future
+            if (selectedDate.setHours(0, 0, 0, 0) >= currentDate.setHours(0, 0, 0, 0)) {
+                document.getElementById('appointments').style.display = 'block';
+                disablePastTimes(selectedDate);
+            } else {
+                alert('Please select a valid date.');
+            }
+        });
+
+        function selectTime(time) {
+            const selectedDate = document.getElementById('date').value;
+            if (!selectedDate) {
+                alert('Please select a date first.');
+                return;
+            }
+            document.getElementById('selectedTime').value = time;
+            document.getElementById('submitBtn').style.display = 'block';
+        }
+
+        function disablePastTimes(selectedDate) {
+            const currentDate = new Date();
+
+            if (selectedDate.toDateString() === currentDate.toDateString()) {
+                const currentHour = currentDate.getHours();
+
+                document.getElementById('time1').disabled = currentHour >= 9;
+                document.getElementById('time2').disabled = currentHour >= 12;
+                document.getElementById('time3').disabled = currentHour >= 14;
+                document.getElementById('time4').disabled = currentHour >= 19;
+            } else {
+                document.getElementById('time1').disabled = false;
+                document.getElementById('time2').disabled = false;
+                document.getElementById('time3').disabled = false;
+                document.getElementById('time4').disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>
